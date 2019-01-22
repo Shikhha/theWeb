@@ -1,16 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 //import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import Navigation from "./Navigation";
+//import Navigation from "./navigation/Navigation";
+import Welcome from "./welcome/Welcome";
+import Navigation from "./navigation/Navigation";
 
-ReactDOM.render(
-  <Navigation logoTitle="theWeb" />,
-  document.getElementById("root")
-);
+class App1 extends Component {
+  render() {
+    return (
+      <div>
+        <nav>
+          <Navigation logoTitle="theWeb" />
+        </nav>
+        <aside>
+          <Welcome />
+        </aside>
+      </div>
+    );
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
+ReactDOM.render(<App1 />, document.getElementById("root"));
 serviceWorker.unregister();
