@@ -14,9 +14,9 @@ The desired state will be displayed in the page, and when the control is manipul
 
 ## Requirements
 
-1 As there will be several pages and a side navigation menu, this needs to be created. 
-2. Basic page responsiveness is also desired (to be displayed in a mobile)
-3. As a lot of random functionality will be used in several pages, build a separate random utility component
+- As there will be several pages and a side navigation menu, this needs to be created. 
+- Basic page responsiveness is also desired (to be displayed in a mobile)
+- As a lot of random functionality will be used in several pages, build a separate random utility component
 
 ## Tips
 
