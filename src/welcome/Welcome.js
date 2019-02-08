@@ -27,6 +27,12 @@ class Welcome extends Component {
     else return false;
   };
 
+  displayStatus = checkId => {
+    if (checkId === this.randomNo1 || checkId === this.randomNo2)
+      return "checked";
+    else return "unchecked";
+  };
+
   setTargetValue = () => {
     var target = [1, 2, 3, 12, 23, 13];
     var rand = target[Math.floor(Math.random() * target.length)];
@@ -84,17 +90,17 @@ class Welcome extends Component {
           <div className="check--container">
             <input type="checkbox" name="name-1" checked={this.isChecked(1)} />{" "}
             checkbox1
-            <input type="text" name="status-1" value="unchecked" />
+            <input type="text" name="status-1" value={this.displayStatus(1)} />
           </div>
           <div className="check--container">
             <input type="checkbox" name="name-2" checked={this.isChecked(2)} />{" "}
             checkbox2
-            <input type="text" name="status-2" value="unchecked" />
+            <input type="text" name="status-2" value={this.displayStatus(2)} />
           </div>
           <div className="check--container">
             <input type="checkbox" name="name-3" checked={this.isChecked(3)} />{" "}
             checkbox3
-            <input type="text" name="status-3" value="unchecked" />
+            <input type="text" name="status-3" value={this.displayStatus(3)} />
           </div>
           <div class="state">
             Target state{" "}
