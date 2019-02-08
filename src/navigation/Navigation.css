@@ -3,9 +3,10 @@
   margin: 0;
 }
 
-nav > h2 {
+nav h2 {
   color: white;
   font-size: 15px;
+  font-weight: 350;
 }
 .logo {
   font-size: 30px;
