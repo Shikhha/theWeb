@@ -58,8 +58,6 @@ class Welcome extends Component {
   };
 
   getResult = () => {
-    console.log("total: " + this.totalRandom);
-    console.log("target: " + this.targetValue);
     var result =
       this.totalRandom === this.targetValue ? "Correct State" : "Wrong State";
     return result;
