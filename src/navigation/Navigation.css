@@ -1,23 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+nav > h2 {
+  color: white;
+  font-size: 15px;
+}
 .logo {
-  font-size: 45px;
-  color: #7799d1;
+  font-size: 30px;
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 30px;
 }
-
+.container {
+  width: 30vh;
+  margin: 30px auto;
+}
 nav {
   position: absolute;
-  width: 40vh;
+  width: 37vh;
   height: 100vh;
-  background-color: black;
-  flex: 1;
+  background-color: rgb(27, 36, 66);
 }
 
-h2 {
-  color: white;
-  font-size: 20px;
+nav li {
+  margin-left: 10px;
+}
+nav ul {
+  list-style: none;
+  margin-bottom: 20px;
 }
 
 ul li a {
-  color: wheat;
+  font-size: 14px;
+  color: rgb(218, 215, 192);
+  margin-left: 25px;
+  text-decoration: none;
 }
