@@ -2,8 +2,75 @@ import React, { Component } from "react";
 import "./Welcome.css";
 
 class Welcome extends Component {
+  state = {
+    randomNo1: 0,
+    randomNo2: 0,
+    totalRandom: 0,
+    targetValue: 0
+  };
+
+  randomize = () => {
+    var target = [1, 2, 3, 12, 23, 13];
+    var rand = target[Math.floor(Math.random() * target.length)];
+    this.totalRandom = rand;
+    this.randomNo1 = parseInt(this.totalRandom % 10);
+    this.totalRandom / 10 >= 1
+      ? (this.randomNo2 = parseInt(this.totalRandom / 10))
+      : (this.randomNo2 = 0);
+    this.setState({ totalRandom: this.state.totalRandom });
+    this.setState({ randomNo1: this.state.randomNo1 });
+    this.setState({ randomNo2: this.state.randomNo2 });
+  };
+
+  isChecked = checkId => {
+    if (checkId === this.randomNo1 || checkId === this.randomNo2) return true;
+    else return false;
+  };
+
+  displayStatus = checkId => {
+    if (checkId === this.randomNo1 || checkId === this.randomNo2)
+      return "checked";
+    else return "unchecked";
+  };
+
+  setTargetValue = () => {
+    var target = [1, 2, 3, 12, 23, 13];
+    var rand = target[Math.floor(Math.random() * target.length)];
+    this.targetValue = rand;
+    var targetString = this.targetValue.toString();
+    targetString =
+      targetString.length !== 1
+        ? (targetString =
+            targetString.slice(0, 1) + "," + targetString.slice(1, 2))
+        : targetString;
+
+    return targetString;
+  };
+
+  getStateValue = () => {
+    var result;
+    if (this.randomNo1 !== 0 && this.randomNo2 !== 0) {
+      result =
+        this.randomNo1 === this.randomNo2
+          ? this.randomNo1
+          : this.randomNo1 < this.randomNo2
+          ? this.randomNo1 + "," + this.randomNo2
+          : this.randomNo2 + "," + this.randomNo1;
+    } else {
+      result = this.randomNo1 === 0 ? this.randomNo2 : this.randomNo1;
+    }
+
+    return result;
+  };
+
+  getResult = () => {
+    var result =
+      this.totalRandom === this.targetValue ? "Correct State" : "Wrong State";
+    return result;
+  };
   render() {
     return (
+
       <div>
         <header>
           <p className="welcome">Welcome to theWeb!</p>
