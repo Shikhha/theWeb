@@ -82,27 +82,27 @@ class Checkbox extends Component {
             "correct state" will be shown
           </p>
         </div>
-        <div className="checkbox">
+        <div className="checkboxes">
           <div className="header-sub">
             <h3>Checkboxes</h3>
             <h3>Local state</h3>
           </div>
-          <div className="check--container">
+          <div className="checkboxes-row">
             <input type="checkbox" name="name-1" checked={this.isChecked(1)} />{" "}
             Checkbox-1
             <input type="text" name="status-1" value={this.displayStatus(1)} />
           </div>
-          <div className="check--container">
+          <div className="checkboxes-row">
             <input type="checkbox" name="name-2" checked={this.isChecked(2)} />{" "}
             Checkbox-2
             <input type="text" name="status-2" value={this.displayStatus(2)} />
           </div>
-          <div className="check--container">
+          <div className="checkboxes-row">
             <input type="checkbox" name="name-3" checked={this.isChecked(3)} />{" "}
             Checkbox-3
             <input type="text" name="status-3" value={this.displayStatus(3)} />
           </div>
-          <div class="state">
+          <div class="textbox-state">
             <b>Target state</b>{" "}
             <input type="text" name="target" value={this.setTargetValue()} />
             <b>Current state</b>{" "}

@@ -1,5 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: #e3e3e9;
+}
+
+.header-sub {
+  margin-bottom: 10px;
+}
+
+.header-sub > h3 {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 30px;
+}
+
+.logo {
+  font-size: 30px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 30px;
 }
 
 .button-primary-display {
@@ -26,23 +48,88 @@ body {
   background-color: #340034;
 }
 
+.checkboxes {
+  position: absolute;
+  display: block;
+  color: black;
+  position: absolute;
+  top: 50%;
+  margin-top: 20px;
+}
+
+.checkboxes-row > input:last-child {
+  margin-left: 50px;
+  background-color: #e3e3e9;
+  border: none;
+}
+
+.checkboxes-row > input:first-child {
+  margin-left: 10px;
+}
+
+.textbox-state {
+  margin-left: 10px;
+}
+
+.textbox-state > input {
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+nav {
+  position: absolute;
+  width: 37vh;
+  height: 100vh;
+  background-color: #1b2442;
+}
+
+nav h2 {
+  color: white;
+  font-size: 15px;
+  font-weight: 350;
+}
+
+nav li {
+  margin-left: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+nav ul li a {
+  font-size: 14px;
+  color: #dad7c0;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+nav ul li a:active {
+  color: #e7b2b2;
+}
+
 .container-checkbox {
   background-color: #e3e3e9;
-  color: #3a0e3a;
   width: 30%;
   margin: auto;
   font-weight: 100;
   font-size: 20px;
 }
 
-.header-sub {
-  margin-bottom: 10px;
+.container-home {
+  background-color: #e3e3e9;
+  width: 30%;
+  margin: auto;
+  font-weight: 100;
+  font-size: 20px;
 }
 
-.header-sub > h3 {
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 30px;
+.container-navigation {
+  width: 30vh;
+  margin: 30px auto;
 }
 
 .info {
@@ -56,35 +143,5 @@ body {
   color: black;
   padding-left: 15px;
   padding-top: 20px;
-}
-
-.checkbox {
-  position: absolute;
-  display: block;
-  color: black;
-  position: absolute;
-  top: 50%;
-  margin-top: 20px;
-}
-
-.state {
-  margin-left: 10px;
-}
-
-.state > input {
-  margin-top: 20px;
-  margin-right: 15px;
-  margin-left: 5px;
-  display: inline-block;
-}
-
-.check--container > input:last-child {
-  margin-left: 50px;
-  background-color: #e3e3e9;
-  border: none;
-}
-
-.check--container > input:first-child {
-  margin-left: 10px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,10 @@
+.textbox-state {
+  margin-left: 10px;
+
+  & > input {
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-left: 5px;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,30 @@
+nav {
+  position: absolute;
+  width: 37vh;
+  height: 100vh;
+  background-color: rgb(27, 36, 66);
+
+  h2 {
+    color: white;
+    font-size: 15px;
+    font-weight: 350;
+  }
+
+  li {
+    margin-left: 10px;
+  }
+  ul {
+    list-style: none;
+    margin-bottom: 20px;
+    li a {
+      font-size: 14px;
+      color: rgb(218, 215, 192);
+      margin-left: 25px;
+      text-decoration: none;
+    }
+
+    li a:active {
+      color: rgb(231, 178, 178);
+    }
+  }
+}

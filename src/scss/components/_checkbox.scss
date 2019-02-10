@@ -1,0 +1,18 @@
+.checkboxes {
+  position: absolute;
+  display: block;
+  color: $color-black;
+  position: absolute;
+  top: 50%;
+  margin-top: 20px;
+  &-row {
+    & > input:last-child {
+      margin-left: 50px;
+      background-color: $color-grey-primary;
+      border: none;
+    }
+    & > input:first-child {
+      margin-left: 10px;
+    }
+  }
+}

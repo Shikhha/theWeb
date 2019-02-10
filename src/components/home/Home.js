@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "../../scss/Welcome.css";
+import "../../scss/main.css";
 
 class Home extends Component {
   render() {
     return (
-      <div class="containe">
+      <div class="container-home">
         <h1>Welcome to the Web</h1>
       </div>
     );
