@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import Welcome from "./welcome/Welcome";
+import Home from "./components/home/Home";
 import Navigation from "./navigation/Navigation";
 import { BrowserRouter, Route } from "react-router-dom";
 import Checkbox from "./components/selectors/Checkbox";
@@ -17,9 +17,9 @@ class App1 extends Component {
               <Navigation logoTitle="theWeb" />
             </nav>
             <Route path="/Checkbox" component={Checkbox} />
-            <Route path="/home" component={Welcome} />
+            <Route path="/home" component={Home} />
             <aside>
-              <Welcome />
+              <Home />
             </aside>
           </div>
         </BrowserRouter>
