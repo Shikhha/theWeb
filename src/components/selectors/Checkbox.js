@@ -6,7 +6,7 @@ class Checkbox extends Component {
     randomNo1: 0,
     randomNo2: 0,
     totalRandom: 0,
-    targetValue: 0
+    counter: 0
   };
 
   randomize = () => {
@@ -17,6 +17,7 @@ class Checkbox extends Component {
     this.totalRandom / 10 >= 1
       ? (this.randomNo2 = parseInt(this.totalRandom / 10))
       : (this.randomNo2 = 0);
+    this.state.counter = 1;
     this.setState({ totalRandom: this.state.totalRandom });
     this.setState({ randomNo1: this.state.randomNo1 });
     this.setState({ randomNo2: this.state.randomNo2 });
@@ -33,7 +34,10 @@ class Checkbox extends Component {
     else return "unchecked";
   };
 
-  setTargetValue = () => {
+  getTargetValue = () => {
+    if (this.state.counter === 0) {
+      return "";
+    }
     var target = [1, 2, 3, 12, 23, 13];
     var rand = target[Math.floor(Math.random() * target.length)];
     this.targetValue = rand;
@@ -104,7 +108,7 @@ class Checkbox extends Component {
           </div>
           <div class="textbox-state">
             <b>Target state</b>{" "}
-            <input type="text" name="target" value={this.setTargetValue()} />
+            <input type="text" name="target" value={this.getTargetValue()} />
             <b>Current state</b>{" "}
             <input type="text" name="current" value={this.getStateValue()} />
           </div>
