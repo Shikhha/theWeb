@@ -1,9 +1,34 @@
 body {
-  background-color: rgb(227, 227, 233);
+  background-color: #e3e3e9;
 }
-.containe {
-  background-color: rgb(227, 227, 233);
-  color: rgb(58, 14, 58);
+
+.button-primary-display {
+  margin-left: 10px;
+  width: 90px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  background-color: red;
+}
+
+.button-primary-random > button {
+  display: inline-block;
+  padding: 10px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: purple;
+  color: lavender;
+  margin-left: 10px;
+}
+
+.button-primary-random > button:hover {
+  background-color: #340034;
+}
+
+.container-checkbox {
+  background-color: #e3e3e9;
+  color: #3a0e3a;
   width: 30%;
   margin: auto;
   font-weight: 100;
@@ -13,6 +38,7 @@ body {
 .header-sub {
   margin-bottom: 10px;
 }
+
 .header-sub > h3 {
   display: inline-block;
   padding-left: 10px;
@@ -21,18 +47,17 @@ body {
 
 .info {
   display: block;
-
   border: 3px solid black;
   width: 40%;
   height: 40%;
-  background-color: rgb(236, 235, 241);
+  background-color: white;
   position: absolute;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: black;
   padding-left: 15px;
   padding-top: 20px;
 }
+
 .checkbox {
   position: absolute;
   display: block;
@@ -45,37 +70,21 @@ body {
 .state {
   margin-left: 10px;
 }
+
 .state > input {
   margin-top: 20px;
   margin-right: 15px;
   margin-left: 5px;
   display: inline-block;
 }
+
 .check--container > input:last-child {
   margin-left: 50px;
+  background-color: #e3e3e9;
   border: none;
-  background-color: rgb(227, 227, 233);
 }
 
 .check--container > input:first-child {
   margin-left: 10px;
-  background-color: rgb(227, 227, 233);
 }
-
-.state--button {
-  margin-left: 10px;
-  width: 90px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  padding: 10px;
-  background-color: red;
-}
-button {
-  padding: 10px;
-  border-style: none;
-  border-radius: 5px;
-  background-color: purple;
-  color: lavender;
-  margin-left: 10px;
-}
+/*# sourceMappingURL=main.css.map */

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../scss/Checkbox.css";
+import "../../scss/main.css";
 
 class Checkbox extends Component {
   state = {
@@ -70,7 +70,7 @@ class Checkbox extends Component {
   };
   render() {
     return (
-      <div class="containe">
+      <div class="container-checkbox">
         <h2>Checkboxes</h2>
         <div class="info">
           <p>
@@ -89,36 +89,40 @@ class Checkbox extends Component {
           </div>
           <div className="check--container">
             <input type="checkbox" name="name-1" checked={this.isChecked(1)} />{" "}
-            checkbox1
+            Checkbox-1
             <input type="text" name="status-1" value={this.displayStatus(1)} />
           </div>
           <div className="check--container">
             <input type="checkbox" name="name-2" checked={this.isChecked(2)} />{" "}
-            checkbox2
+            Checkbox-2
             <input type="text" name="status-2" value={this.displayStatus(2)} />
           </div>
           <div className="check--container">
             <input type="checkbox" name="name-3" checked={this.isChecked(3)} />{" "}
-            checkbox3
+            Checkbox-3
             <input type="text" name="status-3" value={this.displayStatus(3)} />
           </div>
           <div class="state">
-            Target state{" "}
+            <b>Target state</b>{" "}
             <input type="text" name="target" value={this.setTargetValue()} />
-            Current state{" "}
+            <b>Current state</b>{" "}
             <input type="text" name="current" value={this.getStateValue()} />
           </div>
           <br />
-          <input
-            className="state--button "
-            type="text"
-            name="state"
-            value={this.getResult()}
-          />
-          <br />
-          <br />
-          <button onClick={this.randomize}>randomize</button>
-          <button>submit</button>
+          <div class="button-primary">
+            <input
+              className="button-primary-display "
+              type="text"
+              name="state"
+              value={this.getResult()}
+            />
+            <br />
+            <br />
+            <div class="button-primary-random">
+              <button onClick={this.randomize}>randomize</button>
+              <button>submit</button>
+            </div>
+          </div>
         </div>
       </div>
     );
