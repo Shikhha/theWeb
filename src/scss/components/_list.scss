@@ -5,6 +5,7 @@ nav {
   background-color: rgb(27, 36, 66);
 
   h2 {
+    text-decoration: none;
     color: white;
     font-size: 15px;
     font-weight: 350;
@@ -23,8 +24,8 @@ nav {
       text-decoration: none;
     }
 
-    li a:active {
-      color: rgb(231, 178, 178);
+    li a:hover {
+      color: $color-hover;
     }
   }
 }

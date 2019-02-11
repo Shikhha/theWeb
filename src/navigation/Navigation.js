@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "../logo.svg";
 import "../scss/main.css";
+import Home from "../components/home/Home";
 import { NavLink } from "react-router-dom";
 class Navigation extends Component {
   render() {
@@ -23,7 +24,7 @@ class Navigation extends Component {
       <React.Fragment>
         <nav>
           <div class="container-navigation">
-            <NavLink to="/home">
+            <NavLink to="/Home" style={{ textDecoration: "none" }}>
               <h2 className="logo">{this.props.logoTitle}</h2>
             </NavLink>
             <h2>Selectors/Controls</h2>
