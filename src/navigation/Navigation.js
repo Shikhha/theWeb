@@ -10,6 +10,7 @@ class Navigation extends Component {
     const forms = ["Drop-downs", "Input", "Text-area", "Content-editable"];
     const dragAndDrop = ["Drag"];
     const files = ["File Upload", "File Download"];
+    const exception = ["Exception page"];
     var path = "/";
     let navLinks = item => {
       return item.map(section => {
@@ -37,6 +38,8 @@ class Navigation extends Component {
             <ul>{navLinks(dragAndDrop)}</ul>
             <h2>Files</h2>
             <ul>{navLinks(files)}</ul>
+            <h2>Exception</h2>
+            <ul>{navLinks(exception)}</ul>
           </div>
         </nav>
       </React.Fragment>

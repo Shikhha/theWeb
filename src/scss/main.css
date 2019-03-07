@@ -7,7 +7,8 @@ body {
   background-color: #e3e3e9;
 }
 
-.container-checkbox {
+.container-checkbox,
+.container-exception {
   background-color: #e3e3e9;
   width: 30%;
   margin: auto;
@@ -85,6 +86,17 @@ body {
 
 .button-primary-random > button:hover {
   background-color: #340034;
+}
+
+.btn-exception {
+  margin-top: 40px;
+  margin-left: 70px;
+  width: 90px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  background-color: red;
 }
 
 .checkboxes {
