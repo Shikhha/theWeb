@@ -8,6 +8,7 @@ class Checkbox extends Component {
     randomNo3: 0,
     totalRandom: 0,
     totalCurrent: 0,
+    targetValue: 0,
     counter: 0,
     click: 0,
     submit: false,
@@ -156,11 +157,16 @@ class Checkbox extends Component {
 
   getResult = () => {
     if (this.state.submit === true) {
-      var result =
-        this.state.totalCurrent === this.state.targetValue
-          ? "Correct State"
-          : "Wrong State";
-      return result;
+      if (this.state.targetValue === 0) {
+        return "--";
+      } else {
+        var result =
+          this.state.totalCurrent === this.state.targetValue
+            ? "Correct State"
+            : "Wrong State";
+
+        return result;
+      }
     }
   };
   clear = () => {
