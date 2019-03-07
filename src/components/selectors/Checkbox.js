@@ -11,6 +11,7 @@ class Checkbox extends Component {
     counter: 0,
     click: 0,
     submit: false,
+    random: false,
     checkboxState: [false, false, false]
   };
 
@@ -32,10 +33,8 @@ class Checkbox extends Component {
       : (this.state.randomNo2 = 0);
     this.state.counter = 1;
     this.state.totalRandom = rand;
-    this.setState({ totalRandom: this.state.totalRandom });
-    this.setState({ randomNo1: this.state.randomNo1 });
-    this.setState({ randomNo2: this.state.randomNo2 });
-    this.setState({ randomNo3: this.state.randomNo3 });
+    this.state.random = true;
+    this.setState({ random: this.state.random });
     if (this.state.randomNo1 !== 0) {
       let checkbox1 = document.getElementById(this.state.randomNo1.toString());
       checkbox1.checked = true;
@@ -51,10 +50,6 @@ class Checkbox extends Component {
       checkbox3.checked = true;
       this.state.checkboxState[this.state.randomNo3 - 1] = true;
     }
-
-    console.log("random 1 => " + this.state.randomNo1);
-    console.log("random 2 => " + this.state.randomNo2);
-    console.log("random 3 => " + this.state.randomNo3);
   };
 
   reset = () => {
@@ -64,9 +59,12 @@ class Checkbox extends Component {
       this.state.checkboxState[parseInt(checkbox.id) - 1] = false;
     });
     this.state.submit = false;
+    let state = document.querySelector(".button-primary-display");
+    state.value = "--";
   };
 
   handleChecked = event => {
+    this.state.random = true;
     let id = parseInt(event.target.id);
     if (this.state.checkboxState[id - 1] === false) {
       event.target.checked = true;
@@ -77,9 +75,12 @@ class Checkbox extends Component {
       this.state.checkboxState[id - 1] = false;
       document.getElementById("status-" + id).value = "unchecked";
     }
+    let currentvalue = document.querySelector(".text2");
+    currentvalue.value = this.getCurrentValue();
   };
 
   submit = () => {
+    this.state.random = false;
     this.state.totalCurrent = 0;
     let currentVal = this.state.totalCurrent;
     this.state.submit = true;
@@ -92,6 +93,7 @@ class Checkbox extends Component {
     this.setState({ submit: this.state.submit });
     this.setState({ totalCurrent: this.state.totalCurrent });
     this.state.counter = 1;
+    console.log("current value => " + this.state.totalCurrent);
   };
 
   displayStatus = checkId => {
@@ -103,61 +105,59 @@ class Checkbox extends Component {
   };
 
   getTargetValue = () => {
-    if (this.state.counter === 0) {
-      return "";
+    if (this.state.random === true) {
+      if (this.state.counter === 0) {
+        return "";
+      }
+      var target = [1, 2, 3, 12, 23, 13, 123];
+      var rand = target[Math.floor(Math.random() * target.length)];
+      this.state.targetValue = rand;
+      var targetString = this.state.targetValue.toString();
+      targetString =
+        targetString.length !== 1
+          ? (targetString =
+              targetString.slice(0, 1) + "," + targetString.slice(1, 2))
+          : targetString;
+      if (rand.toString().length === 3) {
+        targetString += "," + (rand % 10);
+      }
+      return targetString;
     }
-    var target = [1, 2, 3, 12, 23, 13, 123];
-    var rand = target[Math.floor(Math.random() * target.length)];
-    this.state.targetValue = rand;
-    var targetString = this.state.targetValue.toString();
-    targetString =
-      targetString.length !== 1
-        ? (targetString =
-            targetString.slice(0, 1) + "," + targetString.slice(1, 2))
-        : targetString;
-    if (rand.toString().length === 3) {
-      targetString += "," + (rand % 10);
-    }
-    return targetString;
   };
 
   getCurrentValue = () => {
     let arr = [];
     let result = "";
-    if (this.state.submit) {
+    if (this.state.random) {
       this.state.checkboxState.forEach((current, index) => {
         if (current === true) {
           arr.push(index + 1);
         }
       });
-    } else {
-      arr.push(this.state.randomNo1);
-      arr.push(this.state.randomNo2);
-      arr.push(this.state.randomNo3);
-    }
-    arr.sort();
-    arr.forEach((current, index) => {
-      if (current !== 0) {
-        if (index !== arr.length - 1) {
-          result += current + ",";
-        } else {
-          result += current;
+
+      // else {
+      //   arr.push(this.state.randomNo1);
+      //   arr.push(this.state.randomNo2);
+      //   arr.push(this.state.randomNo3);
+      // }
+      arr.sort();
+      arr.forEach((current, index) => {
+        if (current !== 0) {
+          if (index !== arr.length - 1) {
+            result += current + ",";
+          } else {
+            result += current;
+          }
         }
-      }
-    });
-    return result;
+      });
+      return result;
+    }
   };
 
   getResult = () => {
     if (this.state.submit === true) {
       var result =
         this.state.totalCurrent === this.state.targetValue
-          ? "Correct State"
-          : "Wrong State";
-      return result;
-    } else {
-      var result =
-        this.state.totalRandom === this.state.targetValue
           ? "Correct State"
           : "Wrong State";
       return result;
@@ -250,6 +250,7 @@ class Checkbox extends Component {
               className="button-primary-display "
               type="text"
               name="state"
+              defaultValue="--"
               value={this.getResult()}
             />
             <br />
